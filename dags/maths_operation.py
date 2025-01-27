@@ -80,3 +80,6 @@ with DAG(
         python_callable=square_number,
         provide_context=True
     )
+
+    ## Dependencies
+    start_task >> add_five_task >> multiply_by_two_task >> subtract_three_task >> square_number_task
