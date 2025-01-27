@@ -8,13 +8,11 @@ Task 4: Subtract 3 from the result.
 Task 5: Compute the square of the result.    
 """
 
-
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime
 
 ## Define function for each task
-
 def start_number(**context):
     context["ti"].xcom_push(key='current_value',value=10)
     print("Starting number 10")
@@ -46,7 +44,7 @@ def square_number(**context):
 ## Define the DAG
 with DAG(
     dag_id='math_sequence_dag',
-    start_date=datetime(2023,1,1),
+    start_date=datetime(2025,1,27),
     schedule_interval='@once',
     catchup=False
 
